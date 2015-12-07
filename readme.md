@@ -1,4 +1,4 @@
-# SilverStripe CMS + ReactJS
+# ReactJS Prototype
 
 This is a _very_ bare bones prototype used to demonstrate some of the ideas we're putting forward around using ReactJS in the CMS.
 
