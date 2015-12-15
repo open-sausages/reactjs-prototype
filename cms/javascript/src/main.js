@@ -1,17 +1,10 @@
+import di from 'di';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore, applyMiddleware, combineReducers } from 'redux';
-import thunkMiddleware from 'redux-thunk';
+import createStore from './store/createStore';
 import App from './containers/app';
-import friendsListReducer from 'friendsListReducer'; // Comes from common
 
-// We need to provide a hook for developers to pass in there reducers here.
-const reducers = combineReducers({
-    friends: friendsListReducer
-});
-
-// Initial state for the core CMS application.
 const initialState = {
     friends: {
         isFetching: false,
@@ -19,13 +12,7 @@ const initialState = {
     }
 }
 
-// We need to provide a hook for developers to pass in Store Enhancers here.
-// Store enhancers can set additional initial state required by modules.
-const createStoreWithMiddleware = applyMiddleware(
-    thunkMiddleware
-)(createStore);
-
-const store = createStoreWithMiddleware(reducers, initialState);
+const store = createStore(initialState);
 
 render(
     <Provider store={store}>

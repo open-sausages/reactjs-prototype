@@ -28,6 +28,7 @@ browserify({ debug: true, entries: './cms/javascript/src/main.js' })
 browserify({ debug: true, entries: './better-component/javascript/src/betterComponent.js' })
     .transform(babelify)
     .external('di')
+    .external('friendsListComponent')
     .bundle()
     .on('error', function (err) { console.log('Error: ' + err.message); })
     .pipe(fs.createWriteStream('./better-component/javascript/dist/main.js'));

@@ -36,6 +36,23 @@
         }
       }
     },
+    "object-assign-deep": {
+      "version": "0.0.4",
+      "from": "object-assign-deep@*",
+      "resolved": "https://registry.npmjs.org/object-assign-deep/-/object-assign-deep-0.0.4.tgz",
+      "dependencies": {
+        "object-assign": {
+          "version": "2.0.0",
+          "from": "object-assign@>=2.0.0 <2.1.0",
+          "resolved": "https://registry.npmjs.org/object-assign/-/object-assign-2.0.0.tgz"
+        },
+        "underscore": {
+          "version": "1.7.0",
+          "from": "underscore@>=1.7.0 <1.8.0",
+          "resolved": "https://registry.npmjs.org/underscore/-/underscore-1.7.0.tgz"
+        }
+      }
+    },
     "react": {
       "version": "0.14.3",
       "from": "react@>=0.14.3 <0.15.0",
@@ -170,6 +187,11 @@
       "version": "3.0.5",
       "from": "redux@>=3.0.4 <4.0.0",
       "resolved": "https://registry.npmjs.org/redux/-/redux-3.0.5.tgz"
+    },
+    "redux-logger": {
+      "version": "2.2.1",
+      "from": "redux-logger@*",
+      "resolved": "https://registry.npmjs.org/redux-logger/-/redux-logger-2.2.1.tgz"
     },
     "redux-thunk": {
       "version": "1.0.2",
