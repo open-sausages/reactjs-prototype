@@ -1,6 +1,6 @@
 import React, { PropTypes, Component } from 'react';
 
-class FriendsList extends Component {
+class FriendsListComponent extends Component {
 
     componentDidMount() {
         this.props.actions.fetchFriendsIfNeeded();
@@ -33,9 +33,9 @@ class FriendsList extends Component {
     }
 }
 
-FriendsList.propTypes = {
+FriendsListComponent.propTypes = {
     friends: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
 };
 
-export default FriendsList;
+export default FriendsListComponent;

@@ -4,11 +4,11 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import App from './containers/app';
-import friends from './components/friendsList/friendsListReducers';
+import friendsListReducer from 'friendsListReducer'; // Comes from common
 
 // We need to provide a hook for developers to pass in there reducers here.
 const reducers = combineReducers({
-    friends
+    friends: friendsListReducer
 });
 
 // Initial state for the core CMS application.

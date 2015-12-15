@@ -5,6 +5,8 @@
     </head>
     <body>
         <div id="app"></div>
-        <script src="/javascript/dist/main.js"></script>
+        <script src="/common/javascript/dist/main.js"></script><!-- First so common components are available to everyone -->
+        <script src="/better-component/javascript/dist/main.js"></script>
+        <script src="/cms/javascript/dist/main.js"></script><!-- Last so we're using modifications made by third party modules -->
     </body>
 </html>

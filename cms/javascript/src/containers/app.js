@@ -1,8 +1,10 @@
+import di from 'di'; // Comes from common
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as friendsListActions from '../components/friendsList/friendsListActions';
-import FriendsList from '../components/friendsList/friendsListComponent';
+import * as friendsListActions from 'friendsListActions'; // Comes from common
+
+const FriendsList = di.container.FriendsListComponent;
 
 class App extends Component {
 

@@ -28,7 +28,7 @@ function fetchFriends() {
     return (dispatch) => {
         dispatch(getFriends());
 
-        return fetch('/data/friends.json', { credentials: 'same-origin' })
+        return fetch('/cms/data/friends.json', { credentials: 'same-origin' })
             .then(response => response.json())
             .then(json => dispatch(getFriendsSuccess(json)));
     };
