@@ -12,7 +12,7 @@ The `cms` directory represents the core SilverStripe CMS ReactJS aplication.
 
 The `better-component` directory represents a third party module which integrates with the core CMS app.
 
-JavaScript dependencies and build tasks for common, cms, and better-component applications are managed at the root level, this is just for, they would be handled independently in real applications.
+JavaScript dependencies and build tasks for common, cms, and better-component applications are managed at the root level, this is just for simplicity, they would be handled independently in real applications.
 
 ## Install
 
