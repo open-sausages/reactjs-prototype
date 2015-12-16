@@ -25,7 +25,7 @@ browserify({ debug: true, entries: './cms/javascript/src/main.js' })
     .pipe(fs.createWriteStream('./cms/javascript/dist/main.js'));
 
 // better-component
-browserify({ debug: true, entries: './better-component/javascript/src/betterComponent.js' })
+browserify({ debug: true, entries: './better-component/javascript/src/main.js' })
     .transform(babelify)
     .external('di')
     .external('friendsListComponent')

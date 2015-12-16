@@ -1,5 +1,7 @@
+import di from 'di';
 import { combineReducers } from 'redux';
-import friendsListReducer from 'friendsListReducer'; // Comes from common
+
+const friendsListReducer = di.container.FriendsListReducer; // Get from DI so we get any extended behaviour.
 
 const rootReducer = combineReducers({
     friends: friendsListReducer // The reducer key matches a key in the store.
