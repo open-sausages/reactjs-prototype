@@ -1,7 +1,7 @@
 import di from 'di';
 import BetterComponent from './components/betterComponent/betterComponent';
 import * as betterComponentActions from './components/betterComponent/betterComponentActions';
-import BetterComponentReducer from './components/betterComponent/betterComponentReducer';
+import betterComponentReducer from './components/betterComponent/betterComponentReducer';
 
 // Register some initial state for Better Component.
 // Merged with the core CMS state by when it initialises.
@@ -24,7 +24,6 @@ di.decorator('FriendsListActions', (friendsListActions) => {
     return Object.assign({}, friendsListActions, betterComponentActions);
 });
 
-// Called every time the FriendsListReducer is called.
-di.middleware('FriendsListReducer', (FriendsListReducer, next) => {
-    console.log('better reducer');
+di.decorator('FriendsListReducer', (friendsListReducer) => {
+    return betterComponentReducer(friendsListReducer);
 });
