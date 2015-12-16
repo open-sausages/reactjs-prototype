@@ -5,8 +5,17 @@
     </head>
     <body>
         <div id="app"></div>
-        <script src="/common/javascript/dist/main.js"></script><!-- First so common components are available to everyone -->
+
+        <!-- Required scripts -->
+        <script src="/common/javascript/dist/main.js"></script>
+        <script src="/cms/javascript/dist/main.js"></script>
+
+        <!-- Third party scripts (Optional) -->
         <script src="/better-component/javascript/dist/main.js"></script>
-        <script src="/cms/javascript/dist/main.js"></script><!-- Last so we're using modifications made by third party modules -->
+
+        <!-- Initialise the app -->
+        <script>
+            window.appBoot();
+        </script>
     </body>
 </html>

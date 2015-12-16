@@ -2,15 +2,11 @@ import di from 'di'; // Comes from common
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-//import * as friendsListActions from 'friendsListActions'; // Comes from common
-
-// Get the DI versions so we also get any third party extensions.
-const friendsListActions = di.container.FriendsListActions;
-const FriendsListComponent = di.container.FriendsListComponent;
 
 class App extends Component {
 
     render() {
+        const FriendsListComponent = di.container.FriendsListComponent;
         const { friends, actions } = this.props;
 
         return (
@@ -29,8 +25,10 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(friendsListActions, dispatch)
+        actions: bindActionCreators(di.container.FriendsListActions, dispatch)
     };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default function app() {
+    return connect(mapStateToProps, mapDispatchToProps)(App);
+};

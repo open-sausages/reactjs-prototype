@@ -3,7 +3,7 @@ import { createStore, applyMiddleware } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 import createLogger from 'redux-logger';
 import objectAssignDeep from 'object-assign-deep';
-import rootReducer from '../reducers/rootReducer.js';
+import createRootReducer from '../reducers/createRootReducer.js';
 
 /**
  * Merges dependency injected state with the initial CMS app's initial state.
@@ -29,5 +29,5 @@ const createStoreWithMiddleware = applyMiddleware(
 )(createStore);
 
 export default function (initialState) {
-    return createStoreWithMiddleware(rootReducer, getCombinedInitialState(initialState));
+    return createStoreWithMiddleware(createRootReducer(), getCombinedInitialState(initialState));
 };
