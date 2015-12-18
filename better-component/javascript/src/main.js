@@ -1,4 +1,4 @@
-import di from 'di';
+import { di } from 'di';
 import BetterComponent from './components/betterComponent/betterComponent';
 import * as betterComponentActions from './components/betterComponent/betterComponentActions';
 import betterComponentReducer from './components/betterComponent/betterComponentReducer';

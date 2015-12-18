@@ -2,7 +2,7 @@
  * Bootstrap dependency injection for common components.
  */
 
-import di from './di';
+import { di } from './di';
 import FriendsListComponent from './components/friendsList/friendsListComponent';
 import FriendsListReducer from './components/friendsList/friendsListReducer';
 import * as friendsListActions from './components/friendsList/friendsListActions';

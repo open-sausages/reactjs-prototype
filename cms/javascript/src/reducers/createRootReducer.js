@@ -1,4 +1,4 @@
-import di from 'di';
+import { di } from 'di';
 import { combineReducers } from 'redux';
 
 export default function createRootReducer() {

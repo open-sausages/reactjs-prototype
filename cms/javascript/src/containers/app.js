@@ -1,4 +1,4 @@
-import di from 'di'; // Comes from common
+import { di, combineMapStateToProps } from 'di'; // Comes from common
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
@@ -29,6 +29,8 @@ function mapDispatchToProps(dispatch) {
     };
 }
 
-export default function app() {
-    return connect(mapStateToProps, mapDispatchToProps)(App);
+export default function app(injectedMapStateToProps, injectedMapDispatchToProps) {
+    const combinedMapStateToProps = combineMapStateToProps(mapStateToProps, injectedMapStateToProps);
+
+    return connect(combinedMapStateToProps, mapDispatchToProps)(App);
 };
