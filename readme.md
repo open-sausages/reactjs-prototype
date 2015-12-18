@@ -14,6 +14,40 @@ The `better-component` directory represents a third party module which integrate
 
 JavaScript dependencies and build tasks for common, cms, and better-component applications are managed at the root level, this is just for simplicity, they would be handled independently in real applications.
 
+## Form field schema
+
+```json
+{
+    "page": {
+        "id": 1,
+        "form": {
+            "fields": [
+                {
+                    "type": "",
+                    "parent": "",
+                    "name": "",
+                    "title": "",
+                    "value": "",
+                    "message": "",
+                    "messageType": "",
+                    "extraClass": "",
+                    "description": "",
+                    "dontEscape": true,
+                    "rightTitle": "",
+                    "leftTitle": "",
+                    "containerFieldList": 0,
+                    "readOnly": true,
+                    "disabled": true,
+                    "customValidationMessage": "",
+                    "attributes": [],
+                    "children": [""]
+                }
+            ]
+        }
+    }
+}
+```
+
 ## Install
 
 Only required if you want to hack around with the code.

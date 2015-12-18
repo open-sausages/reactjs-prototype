@@ -1,0 +1,53 @@
+{
+    "page": {
+        "id": 1,
+        "form": {
+            "fields": [
+                {
+                    "type": "TextField",
+                    "name": "Title",
+                    "title": "Page name",
+                    "value": "Homepage"
+                },
+                {
+                    "type": "SiteTreeURLSegmentField",
+                    "name": "URLSegment",
+                    "title": "URL Segment",
+                    "value": "home"
+                },
+                {
+                    "type": "TextField",
+                    "name": "MenuTitle",
+                    "title": "Navigation label",
+                    "value": "Homepage"
+                },
+                {
+                    "type": "HtmlEditorField",
+                    "name": "Content",
+                    "title": "Content",
+                    "value": ""
+                },
+                {
+                    "type": "ToggleCompositeField",
+                    "name": "Metadata",
+                    "title": "Metadata",
+                    "children": ["MetaDescription", "ExtraMeta"]
+                },
+                {
+                    "type": "TextAreaField",
+                    "parent": "Metadata",
+                    "name": "MetaDescription",
+                    "title": "Meta Description",
+                    "value": ""
+                },
+                {
+                    "type": "TextAreaField",
+                    "parent": "Metadata",
+                    "name": "ExtraMeta",
+                    "title": "Extra Meta",
+                    "value": ""
+                }
+            ]
+        }
+    }
+}
