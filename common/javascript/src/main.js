@@ -11,7 +11,10 @@ import { di } from './di';
 import FriendsListComponent from './components/friendsList/friendsListComponent';
 import FormComponent from './components/form/formComponent';
 import TextFieldComponent from './components/textField/textFieldComponent';
-import SiteTreeUrlSegmentField from './components/siteTreeUrlSegmentField/siteTreeUrlSegmentFieldComponent'
+import SiteTreeUrlSegmentFieldComponent from './components/siteTreeUrlSegmentField/siteTreeUrlSegmentFieldComponent';
+import HtmlEditorFieldComponent from './components/htmlEditorField/htmlEditorFieldComponent';
+import ToggleCompositeFieldComponent from './components/toggleCompositeField/toggleCompositeFieldComponent';
+import TextareaFieldComponent from './components/textareaField/textareaFieldComponent';
 
 import * as friendsListActions from './actions/friendsListActions';
 import * as pageActions from './actions/pageActions';
@@ -25,7 +28,10 @@ import pageReducer from './reducers/pageReducer';
 di.factory('FriendsListComponent', () => FriendsListComponent);
 di.factory('Form', () => FormComponent);
 di.factory('TextField', () => TextFieldComponent);
-di.factory('SiteTreeURLSegmentField', () => SiteTreeUrlSegmentField);
+di.factory('SiteTreeURLSegmentField', () => SiteTreeUrlSegmentFieldComponent);
+di.factory('HtmlEditorField', () => HtmlEditorFieldComponent);
+di.factory('ToggleCompositeField', () => ToggleCompositeFieldComponent);
+di.factory('TextAreaField', () => TextareaFieldComponent);
 
 /**
  * Register actions with DI.

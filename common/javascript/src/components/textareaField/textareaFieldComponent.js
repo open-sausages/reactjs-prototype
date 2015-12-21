@@ -1,9 +1,9 @@
 /**
- * Form field component for an HTML editor.
+ * Form field component for a textarea.
  */
 import React, { PropTypes, Component } from 'react';
 
-class HtmlEditorField extends Component {
+class TextareaFieldComponent extends Component {
 
     constructor(props) {
         super(props);
@@ -17,11 +17,11 @@ class HtmlEditorField extends Component {
 
     render() {
         return (
-            <div className='text-field-component'>
+            <div className='textarea-field-component'>
                 {typeof this.props.title !== 'undefined' &&
                     <label>{this.props.title}</label>
                 }
-                <textarea type='text' value={this.state.value} onChange={this.handleChange} />
+                <textarea value={this.state.value} onChange={this.handleChange} />
             </div>
         );
     }
@@ -36,9 +36,9 @@ class HtmlEditorField extends Component {
     } 
 }
 
-HtmlEditorField.propTypes = {
+TextareaFieldComponent.propTypes = {
     title: PropTypes.string,
     value: PropTypes.string.isRequired
 };
 
-export default HtmlEditorField;
+export default TextareaFieldComponent;
