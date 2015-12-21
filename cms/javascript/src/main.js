@@ -5,9 +5,10 @@ import createStore from './store/createStore';
 import app from './containers/app';
 
 const initialState = {
-    friends: {
+    page: {
         isFetching: false,
-        friends: []
+        formFields: [],
+        lastUpdated: null
     }
 }
 

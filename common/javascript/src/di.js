@@ -1,6 +1,12 @@
 import Bottle from 'bottlejs';
+import objectAssignDeep from 'object-assign-deep';
 
 const defaultMapStateToPropsFn = (state) => {};
+
+/**
+ * Default DI container
+ */
+export let di = new Bottle();
 
 /**
  * Helper for combining mapStateToProps functions.
@@ -18,6 +24,29 @@ export function combineMapStateToProps(defaultFn = defaultMapStateToPropsFn, inj
 };
 
 /**
- * Default DI container
+ * Merges dependency injected state with the initial CMS app's initial state.
+ *
+ * @param object initialState - CMS application initial state object.
+ * @return object
  */
-export let di = new Bottle();
+export function getCombinedInitialState(initialState) {
+    var combinedInitialState = Object.assign({}, initialState);
+
+    for (let key in di.container) {
+        if (key.match(/_initialState$/) !== null) {
+            combinedInitialState = objectAssignDeep(combinedInitialState, di.container[key]);
+        }
+    }
+
+    return combinedInitialState;
+}
+
+/**
+ * Takes an array of fields and removes those with an unknown field type.
+ *
+ * @param array fields
+ * @return array
+ */
+export function filterValidFieldTypes(fields) {
+    return fields.filter(field => typeof di.container[field.type] !== 'undefined');
+}

@@ -1,25 +1,40 @@
 /**
  * Bootstrap dependency injection for common components.
+ *
+ * Each `factory` is called once, the first time the component is requested from the DI container.
+ * A factory will return a singleton, so we're returning the class, this means we can always
+ * create instances of the class, rather than being restricted to a single instance.
  */
 
 import { di } from './di';
+
 import FriendsListComponent from './components/friendsList/friendsListComponent';
-import FriendsListReducer from './components/friendsList/friendsListReducer';
-import * as friendsListActions from './components/friendsList/friendsListActions';
+import FormComponent from './components/form/formComponent';
+import TextFieldComponent from './components/textField/textFieldComponent';
+import SiteTreeUrlSegmentField from './components/siteTreeUrlSegmentField/siteTreeUrlSegmentFieldComponent'
 
-// Registers FriendsList with DI.
-// Called the first time FriendsList is requested from the di container.
-di.factory('FriendsListComponent', (container) => {
-    // Whatever is returned will be a singleton i.e. whenever FriendList is requested
-    // from the di container, this exact object will be returned. We're returning
-    // the class because we don't want to use the same instance every time FriendsListComponent is requested.
-    return FriendsListComponent;
-});
+import * as friendsListActions from './actions/friendsListActions';
+import * as pageActions from './actions/pageActions';
 
-di.factory('FriendsListReducer', () => {
-    return FriendsListReducer;
-});
+import friendsListReducer from './reducers/friendsListReducer';
+import pageReducer from './reducers/pageReducer';
 
-di.factory('FriendsListActions', () => {
-    return friendsListActions;
-});
+/**
+ * Register components with DI.
+ */
+di.factory('FriendsListComponent', () => FriendsListComponent);
+di.factory('Form', () => FormComponent);
+di.factory('TextField', () => TextFieldComponent);
+di.factory('SiteTreeURLSegmentField', () => SiteTreeUrlSegmentField);
+
+/**
+ * Register actions with DI.
+ */
+di.factory('friendsListActions', () => friendsListActions);
+di.factory('pageActions', () => pageActions);
+
+/**
+ * Register reducers with DI.
+ */
+di.factory('friendsListReducer', () => friendsListReducer);
+di.factory('pageReducer', () => pageReducer);

@@ -1,36 +1,22 @@
 import fetch from 'isomorphic-fetch';
-import * as actionTypes from './friendsListConstants';
-
-/**
- * Dispatched before the AJAX request happens.
- */
-function getFriends() {
-    return {
-        type: actionTypes.GET_FRIENDS
-    };
-}
-
-/**
- * Dispatch when the results come back. Similar to a success callback.
- */
-function getFriendsSuccess(json) {
-    return {
-        type: actionTypes.GET_FRIENDS_SUCCESS,
-        friends: json.friends,
-        receivedAt: Date.now()
-    };
-}
+import { FRIENDS } from '../constants/actionTypes';
 
 /**
  * Does the AJAX request and dispatches the before and after actions.
  */
 function fetchFriends() {
     return (dispatch) => {
-        dispatch(getFriends());
+        dispatch({
+            type: FRIENDS.GET_FRIENDS
+        });
 
         return fetch('/cms/data/friends.json', { credentials: 'same-origin' })
             .then(response => response.json())
-            .then(json => dispatch(getFriendsSuccess(json)));
+            .then(json => dispatch({
+                type: FRIENDS.GET_FRIENDS_SUCCESS,
+                friends: json.friends,
+                receivedAt: Date.now()
+            }));
     };
 }
 

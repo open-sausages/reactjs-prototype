@@ -19,11 +19,11 @@ di.decorator('FriendsListComponent', (FriendsListComponent) => {
     return BetterComponent; // Replaces FriendsListComponent with BetterComponent.
 });
 
-di.decorator('FriendsListActions', (friendsListActions) => {
+di.decorator('friendsListActions', (friendsListActions) => {
     // Extends friendsListActions with our betterComponentAvtions.
     return Object.assign({}, friendsListActions, betterComponentActions);
 });
 
-di.decorator('FriendsListReducer', (friendsListReducer) => {
+di.decorator('friendsListReducer', (friendsListReducer) => {
     return betterComponentReducer(friendsListReducer);
 });
