@@ -2,10 +2,6 @@ import React, { PropTypes, Component } from 'react';
 
 class FriendsListComponent extends Component {
 
-    componentDidMount() {
-        this.props.actions.fetchFriendsIfNeeded();
-    }
-
     render() {
         const { isFetching, error, friends } = this.props.friends;
 

@@ -1,12 +1,12 @@
-import * as actionTypes from './friendsListConstants';
+import { FRIENDS } from '../constants/actionTypes';
 
-function friends(state = {}, action) {
+function friendsReducer(state = {}, action) {
     switch (action.type) {
-        case actionTypes.GET_FRIENDS:
+        case FRIENDS.GET_FRIENDS:
             return Object.assign({}, state, {
                 isFetching: true
             });
-        case actionTypes.GET_FRIENDS_SUCCESS:
+        case FRIENDS.GET_FRIENDS_SUCCESS:
             return Object.assign({}, state, {
                 isFetching: false,
                 error: null,
@@ -18,4 +18,4 @@ function friends(state = {}, action) {
     }
 }
 
-export default friends;
+export default friendsReducer;

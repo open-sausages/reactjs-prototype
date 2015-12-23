@@ -1,7 +1,7 @@
 import React from 'react';
-import FriendsListComponent from 'friendsListComponent'; // Comes from common
+import DataListComponent from 'DataListComponent'; // Comes from common
 
-class BetterComponent extends FriendsListComponent {
+class BetterComponent extends DataListComponent {
     constructor(props) {
         super(props);
 

@@ -5,13 +5,17 @@ import { connect } from 'react-redux';
 
 class App extends Component {
 
+    componentDidMount() {
+        this.props.actions.fetchFriendsIfNeeded();
+    }
+
     render() {
-        const FriendsListComponent = di.container.FriendsListComponent;
+        const DataListComponent = di.container.DataListComponent;
         const { friends, actions } = this.props;
 
         return (
             <div>
-                <FriendsListComponent friends={friends} actions={actions} />
+                <DataListComponent friends={friends} actions={actions} />
             </div>
         );
     }
@@ -25,7 +29,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(di.container.FriendsListActions, dispatch)
+        actions: bindActionCreators(di.container.friendsActions, dispatch)
     };
 }
 
